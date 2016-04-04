@@ -1,0 +1,34 @@
+---
+security:
+#password cf client will use when interacting with broker
+  user.password: ${user.password}
+hive:
+  #encoded hadoop configuration files for hive
+  provided.zip: ${hadoop.provided.zip:}
+  server.host: ${HIVE_SERVER2_THRIFT_BIND_HOST:localhost}
+  server.port: ${HIVE_SERVER2_THRIFT_PORT:10000}
+  superuser.name: ${HIVE_SUPERUSER:}
+  superuser.keytab: ${HIVE_SUPERUSER_KEYTAB:}
+store:
+  #optional parameter to configure zookeeper-store
+  path: ${broker.store.znode:/broker/hive/metadata}
+  user: ${system.user}
+  password: ${system.user.password}
+cf:
+  catalog:
+    serviceName: ${cf.catalog.servicename:hive}
+    serviceId: ${cf.catalog.serviceid:hive}
+    serviceDescription: "Hive service allow to access hiveserver2 on hadoop cluster."
+    baseId: ${BASE_GUID:}
+    plans:
+      - id: shared-plan
+        name: shared
+        description: shared
+        free: true
+      - id: multitenant-plan
+        name: multitenant
+        description: multitenant
+        free: true
+    metadata:
+      imageUrl: ${IMAGE_URL:}
+
