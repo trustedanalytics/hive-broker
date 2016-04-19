@@ -13,6 +13,8 @@
  */
 package org.trustedanalytics.servicebroker.hive.config;
 
+import com.beust.jcommander.Strings;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.security.UserGroupInformation;
 import org.springframework.jdbc.datasource.AbstractDataSource;
@@ -79,7 +81,8 @@ public final class KerberosDataSource extends AbstractDataSource implements Data
         | KrbException
         | IOException
         | InterruptedException e) {
-      throw new IllegalStateException("Could not login with keytab", e);
+      throw new IllegalStateException(
+          String.format("Could not login %s with keytab %s", user, keyTabLocation), e);
     }
   }
 

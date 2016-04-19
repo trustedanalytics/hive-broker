@@ -69,7 +69,7 @@ public class ServiceInstanceProvisioningConfig {
     final String realm = kerberosServiceConfiguration.getProperty(Property.KRB_REALM).get();
     KerberosDataSource dataSource = KerberosDataSource.Builder.create()
         .connectTo(hiveUrl)
-        .asWho(configuration.getUser())
+        .asWho(configuration.getHiveSuperUser())
         .useKeyTab(configuration.getKeyTabLocation())
         .with(configuration.hiveConfigAsHadoopConfig())
         .with(KrbLoginManagerFactory.getInstance().getKrbLoginManagerInstance(kdc, realm))

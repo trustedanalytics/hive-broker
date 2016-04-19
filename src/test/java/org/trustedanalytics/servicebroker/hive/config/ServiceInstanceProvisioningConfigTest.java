@@ -68,7 +68,7 @@ public class ServiceInstanceProvisioningConfigTest {
     @Bean
     public ExternalConfiguration externalConfiguration() throws IOException {
       ExternalConfiguration mocked = Mockito.mock(ExternalConfiguration.class);
-      when(mocked.getUser()).thenReturn("jojo");
+      when(mocked.getHiveSuperUser()).thenReturn("jojo");
       when(mocked.getKeyTabLocation()).thenReturn("/tmp/jojo.keytab");
       when(mocked.hiveConfigAsHadoopConfig()).thenReturn(new Configuration(false));
       return mocked;
