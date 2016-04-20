@@ -99,7 +99,10 @@ public class HiveBindingClient
       return NO_NEEDED_KRB_PROPERTIES;
     }
     String hivePrincipal = hiveConfig.get(HIVE_SERVER_PRINCIPAL_PROPERTY_NAME);
-    Preconditions.checkNotNull(hivePrincipal);
+    Preconditions.checkNotNull(hivePrincipal,
+                               String.format("Can't find %s property in hive client config, "
+                                             + "provided in HADOOP_PROVIDED_ZIP!",
+                                             HIVE_SERVER_PRINCIPAL_PROPERTY_NAME));
     return String.format(";principal=%s;auth=kerberos",
                          hivePrincipal.replaceAll("_HOST", this.hiveServerHost));
   }
