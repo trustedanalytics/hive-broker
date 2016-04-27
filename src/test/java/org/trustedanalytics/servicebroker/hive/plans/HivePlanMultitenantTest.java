@@ -12,21 +12,16 @@
  */
 package org.trustedanalytics.servicebroker.hive.plans;
 
-import static org.hamcrest.Matchers.hasEntry;
-import static org.junit.Assert.assertThat;
-import static org.trustedanalytics.servicebroker.test.cloudfoundry.CfModelsFactory.getServiceInstance;
-
-import java.util.Map;
-
-import org.cloudfoundry.community.servicebroker.exception.ServiceBrokerException;
 import org.cloudfoundry.community.servicebroker.model.ServiceInstance;
 import org.junit.Test;
-import org.trustedanalytics.cfbroker.config.HadoopZipConfiguration;
-import org.trustedanalytics.servicebroker.framework.Credentials;
 import org.trustedanalytics.servicebroker.hive.config.ExternalConfiguration;
 import org.trustedanalytics.servicebroker.hive.plans.binding.HiveBindingClientFactory;
 
-import com.google.common.collect.ImmutableMap;
+import java.util.Map;
+
+import static org.hamcrest.Matchers.hasEntry;
+import static org.junit.Assert.assertThat;
+import static org.trustedanalytics.servicebroker.test.cloudfoundry.CfModelsFactory.getServiceInstance;
 
 public class HivePlanMultitenantTest {
 

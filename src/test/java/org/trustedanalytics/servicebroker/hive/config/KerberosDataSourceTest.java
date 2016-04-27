@@ -52,7 +52,7 @@ public class KerberosDataSourceTest {
     //given
 
     //when
-    DataSource ds = KerberosDataSource.Builder.create().build();
+    KerberosDataSource.Builder.create().build();
 
     //then
     //throws exception

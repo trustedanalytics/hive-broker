@@ -59,8 +59,7 @@ public class ZkLocalConfiguration {
   @Qualifier(Qualifiers.BROKER_STORE)
   @Profile("integration-test")
   public ZookeeperClient getZkClient(TestingServer zkServer) throws IOException {
-    ZookeeperClient client =
-        new ZookeeperClientBuilder(zkServer.getConnectString(), user, password, brokerStoreNode).build();
-    return client;
+    return new ZookeeperClientBuilder(zkServer.getConnectString(), user, password, brokerStoreNode)
+        .build();
   }
 }

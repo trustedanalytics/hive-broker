@@ -21,7 +21,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.trustedanalytics.hadoop.config.client.AppConfiguration;
 import org.trustedanalytics.hadoop.config.client.Configurations;
-import org.trustedanalytics.servicebroker.hive.plans.binding.HiveBindingClient;
 
 import java.io.IOException;
 

@@ -15,11 +15,7 @@
  */
 package org.trustedanalytics.servicebroker.hive.integration.config.store;
 
-import static org.hamcrest.CoreMatchers.nullValue;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
-
-import java.security.MessageDigest;
+import com.google.common.collect.ImmutableList;
 
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -29,7 +25,7 @@ import org.apache.zookeeper.data.ACL;
 import org.apache.zookeeper.data.Id;
 import org.springframework.security.crypto.codec.Base64;
 
-import com.google.common.collect.ImmutableList;
+import java.security.MessageDigest;
 
 public class ZkStoreTestUtils {
 

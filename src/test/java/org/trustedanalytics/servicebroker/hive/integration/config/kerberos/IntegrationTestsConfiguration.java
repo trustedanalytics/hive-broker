@@ -15,10 +15,6 @@
  */
 package org.trustedanalytics.servicebroker.hive.integration.config.kerberos;
 
-import java.io.IOException;
-import java.sql.Driver;
-import java.sql.SQLException;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -26,13 +22,13 @@ import org.trustedanalytics.hadoop.config.client.AppConfiguration;
 import org.trustedanalytics.servicebroker.framework.kerberos.KerberosProperties;
 import org.trustedanalytics.servicebroker.hive.MockedJdbcDriver;
 
-import static org.mockito.Mockito.mock;
+import java.sql.Driver;
 
 @Configuration
 @Profile("integration-test")
 public class IntegrationTestsConfiguration {
   @Bean
-  public KerberosProperties getKerberosProperties() throws IOException {
+  public KerberosProperties getKerberosProperties() {
     return new KerberosProperties("kdc", "realm", "test", false);
   }
 
@@ -42,7 +38,7 @@ public class IntegrationTestsConfiguration {
   }
 
   @Bean
-  public Driver jdbcHiveDriver() throws SQLException {
+  public Driver jdbcHiveDriver() {
     return new MockedJdbcDriver();
   }
 }

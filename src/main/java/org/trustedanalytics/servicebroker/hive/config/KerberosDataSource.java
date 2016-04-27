@@ -13,18 +13,10 @@
  */
 package org.trustedanalytics.servicebroker.hive.config;
 
-import com.beust.jcommander.Strings;
-
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.security.UserGroupInformation;
 import org.springframework.jdbc.datasource.AbstractDataSource;
-import org.trustedanalytics.hadoop.config.client.AppConfiguration;
-import org.trustedanalytics.hadoop.config.client.Configurations;
-import org.trustedanalytics.hadoop.config.client.Property;
-import org.trustedanalytics.hadoop.config.client.ServiceInstanceConfiguration;
-import org.trustedanalytics.hadoop.config.client.ServiceType;
 import org.trustedanalytics.hadoop.kerberos.KrbLoginManager;
-import org.trustedanalytics.hadoop.kerberos.KrbLoginManagerFactory;
 
 import sun.security.krb5.KrbException;
 

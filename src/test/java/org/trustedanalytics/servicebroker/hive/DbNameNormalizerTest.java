@@ -18,8 +18,6 @@ package org.trustedanalytics.servicebroker.hive;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class DbNameNormalizerTest {
 
   @Test
@@ -41,7 +39,7 @@ public class DbNameNormalizerTest {
     NameNormalizer principalNameNormalizer = PrincipalNameNormalizer.create();
 
     //when
-    String actual = principalNameNormalizer.normalize(null);
+    principalNameNormalizer.normalize(null);
 
     //then
     //throws NLP exceptions
